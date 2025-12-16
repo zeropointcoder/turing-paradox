@@ -14,5 +14,5 @@ python3 iris_flower_classifier.py
 ```
 
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 ```

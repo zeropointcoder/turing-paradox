@@ -13,5 +13,5 @@ python3 predict_housing.py
 ```
 
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
