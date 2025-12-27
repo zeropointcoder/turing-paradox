@@ -1,7 +1,7 @@
 # Artificial Instincts - Turing’s Paradox
 
 | # | Project | Focus Area | Implementation |
-|---|----------|-------------|
+|---|----------|-------------|-------------|
 | 1 | [Predict housing prices with linear regression](https://github.com/zeropointcoder/turing-paradox/tree/main/predict-housing) | Machine Learning | Python |
 | 2 | [Iris flower classification](https://github.com/zeropointcoder/turing-paradox/tree/main/iris-flower-classifier) | Machine Learning | Python |
 | 3 | Handwritten digit recognition (MNIST) | Computer Vision | Streamlit |
