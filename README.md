@@ -2,8 +2,8 @@
 
 | # | Project | Focus Area | Implementation |
 |---|----------|-------------|-------------|
-| 1 | [Predict housing prices with linear regression](https://github.com/zeropointcoder/turing-paradox/tree/main/predict-housing) | Machine Learning | Python |
-| 2 | [Iris flower classification](https://github.com/zeropointcoder/turing-paradox/tree/main/iris-flower-classifier) | Machine Learning | Python |
+| 1 | [Predict housing prices with linear regression](https://github.com/zeropointcoder/turing-paradox/tree/main/predict-housing) | Machine Learning | Streamlit |
+| 2 | [Iris flower classification](https://github.com/zeropointcoder/turing-paradox/tree/main/iris-flower-classifier) | Machine Learning | Streamlit |
 | 3 | Handwritten digit recognition (MNIST) | Computer Vision | Streamlit |
 | 4 | Sentiment analysis on movie reviews | NLP | Streamlit |
 | 5 | Spam email classifier | NLP | Streamlit |
