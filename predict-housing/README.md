@@ -3,15 +3,20 @@ Develop an AI-powered model that accurately predicts housing prices based on his
 
 ## Overview
 - Uses historical property data and features (`size`, `location`, `bedrooms`, etc.).
+
 - Learns patterns between property characteristics and prices.
+
 - Predicts the market value of new properties.
+
 - Evaluated using metrics like `RMSE` for accuracy.
 
 ## Run
 ```bash
+pip install -r requirements.txt
 python3 predict_housing.py
 ```
 
 ```bash
-streamlit run streamlit_app.py
+pip install -r requirements.txt
+streamlit run app.py
 ```
