@@ -1,67 +1,136 @@
-import pandas as pd
-import joblib
+import numpy as np
 import streamlit as st
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import accuracy_score
 
-# Load trained model
-model = joblib.load("iris_model.joblib")
 
-# Get the feature order that the model was trained on
-model_columns = model.feature_names_in_
+class IrisData:
+    def __init__(self):
+        dataset = load_iris()
+        self.X = dataset.data
+        self.y = dataset.target
+        self.feature_names = dataset.feature_names
+        self.target_names = dataset.target_names
 
-# Iris target names
-target_names = ["setosa", "versicolor", "virginica"]
+    def split(self, test_size=0.2, random_state=42):
+        return train_test_split(
+            self.X, self.y, test_size=test_size, random_state=random_state
+        )
 
-# Streamlit UI
-st.title("🌸 Iris Flower Classifier")
-st.write("Predict the species of an Iris flower based on its measurements.")
-st.subheader("How to choose values")
-st.write("""
-    - **Setosa** has *very small petals*: petal length ~1.0-1.7
-    - **Versicolor** has *medium petals*: petal length ~3.0-5.0
-    - **Virginica** has *large petals*: petal length ~5.0-7.0 
 
-    Try these example inputs: 
-    - **Setosa**: 5.1, 3.5, 1.4, 0.2
-    - **Versicolor**: 6.0, 2.9, 4.5, 1.5
-    - **Virginica**: 6.5, 3.0, 5.5, 2.0     
-""")
+class IrisModel:
+    def __init__(self):
+        self.pipeline = Pipeline(
+            [
+                ("scaler", StandardScaler()),
+                ("model", LogisticRegression(max_iter=200)),
+            ]
+        )
 
-# User inputs
-sepal_length = st.number_input(
-    "Sepal length (cm)",
-    0.0, 10.0, 5.0,
-    help="Typical values: Setosa ~5.0, Versicolor ~6.0, Virginica ~6.5"
-)
-sepal_width = st.number_input(
-    "Sepal width (cm)",
-    0.0, 10.0, 3.5,
-    help="Typical values: 3.0-3.5 for all species"
-)
-petal_length = st.number_input(
-    "Petal length (cm)",
-    0.0, 10.0, 1.5,
-    help = "Key difference: Setosa ~1.5, Versicolor ~4.5, Virginica ~5.5"
-)
-petal_width = st.number_input(
-    "Petal width (cm)",
-    0.0, 10.0, 0.2,
-    help="Key difference: Setosa ~0.2, Versicolor ~1.5, Virginica ~2.0"
-)
+    def train(self, X_train, y_train):
+        self.pipeline.fit(X_train, y_train)
 
-# Prediction
-if st.button("Predict"):
-    # Force the correct column order using model.feature_names_in_
-    input_data = pd.DataFrame(
-        [[sepal_length, sepal_width, petal_length, petal_width]],
-        columns=model_columns
-    )
+    def predict(self, X):
+        return self.pipeline.predict(X)
 
-    prediction = model.predict(input_data)[0]
-    print(prediction)
-    st.success(f"The predicted Iris species is: **{target_names[prediction]}**")
+    def predict_proba(self, X):
+        return self.pipeline.predict_proba(X)
 
-    st.write("Model column order:", list(model_columns))
-    st.write("Input data:", input_data)
 
-    st.write("Model feature order:", model.feature_names_in_)
-    st.write("Input order:", ["sepal_length", "sepal_width", "petal_length", "petal_width"])
+class Trainer:
+    def __init__(self, model, data):
+        self.model = model
+        self.data = data
+
+    def run(self):
+        X_train, X_test, y_train, y_test = self.data.split()
+        self.model.train(X_train, y_train)
+        return X_test, y_test
+
+
+class Evaluator:
+    def __init__(self, model):
+        self.model = model
+
+    def accuracy(self, X_test, y_test):
+        predictions = self.model.predict(X_test)
+        return accuracy_score(y_test, predictions)
+
+
+class AppUI:
+    def __init__(self):
+        st.set_page_config(page_title="Iris Flower Classification", layout="centered")
+        self.data = IrisData()
+        self.model = IrisModel()
+
+    def show_example_inputs(self):
+        st.markdown(
+            """
+### Example Measurements (Use These to Test)
+
+You can copy the following **exact measurements** into the sliders to verify predictions.
+These values come from real samples in the Iris dataset.
+
+**Iris Setosa**
+- Sepal length: **5.1**
+- Sepal width: **3.5**
+- Petal length: **1.4**
+- Petal width: **0.2**
+
+**Iris Versicolour**
+- Sepal length: **7.0**
+- Sepal width: **3.2**
+- Petal length: **4.7**
+- Petal width: **1.4**
+
+**Iris Virginica**
+- Sepal length: **6.3**
+- Sepal width: **3.3**
+- Petal length: **6.0**
+- Petal width: **2.5**
+"""
+        )
+
+    def run(self):
+        st.title("Iris Flower Classification")
+        st.write("Predict the species using flower measurements.")
+
+        self.show_example_inputs()
+
+        trainer = Trainer(self.model, self.data)
+        X_test, y_test = trainer.run()
+
+        evaluator = Evaluator(self.model)
+        accuracy = evaluator.accuracy(X_test, y_test)
+
+        st.subheader("Model performance")
+        st.write(f"Accuracy: **{accuracy:.2f}**")
+
+        st.subheader("Enter flower measurements")
+
+        inputs = []
+        for name in self.data.feature_names:
+            value = st.slider(name, 0.0, 8.0, 4.0)
+            inputs.append(value)
+
+        input_array = np.array(inputs).reshape(1, -1)
+
+        if st.button("Predict"):
+            prediction = self.model.predict(input_array)[0]
+            probabilities = self.model.predict_proba(input_array)[0]
+
+            st.success(
+                f"Predicted species: **{self.data.target_names[prediction]}**"
+            )
+
+            st.write("Prediction probabilities:")
+            for label, prob in zip(self.data.target_names, probabilities):
+                st.write(f"- {label}: {prob:.2f}")
+
+
+if __name__ == "__main__":
+    AppUI().run()

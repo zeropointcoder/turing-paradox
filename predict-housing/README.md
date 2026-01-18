@@ -1,22 +1,32 @@
-# Predict Housing
-Develop an AI-powered model that accurately predicts housing prices based on historical data and property features.
+#  Predict Housing
+
+An interactive Streamlit application that predicts UK housing prices using linear regression on generated property data.
+
 
 ## Overview
-- Uses historical property data and features (`size`, `location`, `bedrooms`, etc.).
+- A synthetic housing dataset is generated entirely offline
 
-- Learns patterns between property characteristics and prices.
+- Features:
+    - Property size `(m²)`
+    - Number of bedrooms
+    - Property age
 
-- Predicts the market value of new properties.
+- `Linear` regression learns the relationship:
 
-- Evaluated using metrics like `RMSE` for accuracy.
+  **ŷ = β₀ + β₁x₁ + β₂x₂ + β₃x₃**
+
+- Model performance is evaluated using:
+  - Root Mean Squared Error `(RMSE)`
+  - `R²` score
+
+- Users can input property details to get an instant price estimate
+
 
 ## Run
 ```bash
 pip install -r requirements.txt
-python3 predict_housing.py
 ```
 
 ```bash
-pip install -r requirements.txt
 streamlit run app.py
 ```

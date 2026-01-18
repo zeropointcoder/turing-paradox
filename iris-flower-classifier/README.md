@@ -1,24 +1,35 @@
 # Iris Flower Classifier
 
-Predict the species of an `Iris` flower (`Setosa`, `Versicolor`, `Virginica`) based on its `sepal` and `petal` measurements.
+An interactive application that classifies iris flowers into species using measured flower attributes.
 
 
 ## Overview
-- Load and explore the `Iris` dataset.
+- Uses the built-in Iris dataset loaded locally from scikit-learn
 
-- Train a `Random Forest model`.
+- Each sample contains four features:
+  - Sepal length
+  - Sepal width
+  - Petal length
+  - Petal width
 
-- Evaluate the model (accuracy, feature importance).
+- Data is standardised using:
+  - `z = (x − μ) / σ`
 
-- Optionally, use `Streamlit` for interactive predictions.
+- A multinomial `logistic regression` model is trained:
+  - `P(y = k | x) = softmax(wₖx + bₖ)`
+
+- The model outputs:
+  - Predicted class label
+  - Class probabilities
+  
+- User inputs are collected via sliders and classified instantly
+ 
 
 ## Run
 ```bash
 pip install -r requirements.txt
-python3 iris_flower_classifier.py
 ```
 
 ```bash
-pip install -r requirements.txt
 streamlit run app.py
 ```
