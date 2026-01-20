@@ -7,12 +7,12 @@
 | 3 | Handwritten digit recognition (MNIST) | Computer Vision | Streamlit |
 | 4 | Sentiment analysis on movie reviews | NLP | Streamlit |
 | 5 | Spam email classifier | NLP | Streamlit |
-| 6 | Predict stock price trends (simple regression) | Machine Learning | Streamlit |
-| 7 | Customer churn prediction | Machine Learning | Streamlit |
+| 6 | Predict stock price trends (simple regression) | Machine Learning | CLI |
+| 7 | Customer churn prediction | Machine Learning | CLI |
 | 8 | Image classification with CNN (CIFAR-10) | Computer Vision | Streamlit |
 | 9 | Fake news detector | NLP | Streamlit |
 | 10 | Text summarisation using Hugging Face Transformers | NLP | Streamlit |
-| 11 | Voice command recogniser | Audio / Speech | Streamlit |
+| 11 | Voice command recogniser | Audio / Speech | CLI |
 | 12 | Facial expression detector | Computer Vision | Streamlit |
 | 13 | Image background remover | Computer Vision | Streamlit |
 | 14 | Resume screening model | NLP | Streamlit |
