@@ -101,7 +101,7 @@
 | 97 | Deploy AI SaaS product (LLM API + dashboard) | Fullstack AI |  Streamlit |
 | 98 | Build custom tokenisation + embedding library | NLP | CLI |
 | 99 | Pretrain a small transformer on your dataset | NLP / Deep Learning | CLI |
-| 100 | Open-source framework - Linear Regression Model | Community / Research | CLI |
+| 100 | Open-source framework - Linear Regression Framework | Community / Research | CLI |
 
 ---
 
