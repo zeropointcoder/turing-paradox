@@ -59,7 +59,7 @@
 | 55 | Object tracking in video | CV | Streamlit |
 | 56 | Deepfake video detector | CV | Streamlit |
 | 57 | Scene segmentation | CV | Streamlit |
-| 58 | Time series forecasting (ARIMA + LSTM) | ML | Streamlit |
+| 58 | Time series forecasting (ARIMA) | ML | Streamlit |
 | 59 | E-commerce chatbot with memory (LangChain) | LLM / Agents | Streamlit |
 | 60 | Personalised recommender using embeddings | Recommender / LLM | Streamlit |
 | 61 | Real-time face recognition app | CV | Streamlit |
