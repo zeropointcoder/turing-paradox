@@ -46,7 +46,7 @@
 | 42 | Keyword extraction tool | NLP | Streamlit |
 | 43 | Product price optimiser | ML | Streamlit |
 | 44 | Medical image classifier | CV | Streamlit |
-| 45 | AI resume builder with NLP suggestions | NLP / Frontend | Streamlit |
+| 45 | AI resume analyser with NLP suggestions | NLP / Frontend | Streamlit |
 | 46 | Music generation with RNN | Audio / GenAI | Streamlit |
 | 47 | Text translation app | NLP | Streamlit |
 | 48 | Credit card fraud detection | ML | Streamlit |
