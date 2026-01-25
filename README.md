@@ -68,7 +68,7 @@
 | 64 | Text-driven image editing (InstructPix2Pix) | CV / GenAI | Streamlit |
 | 65 | Custom voice assistant | NLP + Audio | Streamlit |
 | 66 | Invoice Total Checker | CV / OCR / ML | Streamlit |
-| 67 | FAQ Bot for Your Portfolio Website | NLP / Agents | Streamlit |
+| 67 | FAQ Bot for Portfolio Website | NLP / Agents | Streamlit |
 | 68 | AI for code debugging assistant | LLM / GenAI | Streamlit |
 | 69 | Knowledge graph generator from documents | NLP | Streamlit |
 | 70 | AI legal document summariser | NLP | Streamlit |
