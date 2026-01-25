@@ -11,7 +11,7 @@
 | 7 | Customer churn prediction | Machine Learning | CLI |
 | 8 | Image classification with CNN (CIFAR-10) | Computer Vision | Streamlit |
 | 9 | Fake news detector | NLP | Streamlit |
-| 10 | Text summarisation using Hugging Face Transformers | NLP | Streamlit |
+| 10 | AI-Powered Recipe Generator | NLP / GenAI | Streamlit |
 | 11 | Voice command recogniser | Audio / Speech | CLI |
 | 12 | Facial expression detector | Computer Vision | Streamlit |
 | 13 | Image background remover | Computer Vision | Streamlit |
@@ -67,8 +67,8 @@
 | 63 | Generative art using diffusion models | GenAI | Streamlit |
 | 64 | Text-driven image editing (InstructPix2Pix) | CV / GenAI | Streamlit |
 | 65 | Custom voice assistant | NLP + Audio | Streamlit |
-| 66 | Smart document understanding (layoutLM) | NLP + CV | CLI |
-| 67 | Conversational agent with tools (LangChain / OpenAI API) | Agents | Streamlit |
+| 66 | Invoice Total Checker | CV / OCR / ML | Streamlit |
+| 67 | FAQ Bot for Your Portfolio Website | NLP / Agents | Streamlit |
 | 68 | AI for code debugging assistant | LLM / GenAI | Streamlit |
 | 69 | Knowledge graph generator from documents | NLP | Streamlit |
 | 70 | AI legal document summariser | NLP | Streamlit |
@@ -80,7 +80,7 @@
 | 76 | Build your own small LLM from scratch | NLP / Deep Learning | CLI |
 | 77 | Train diffusion model from scratch | GenAI | CLI |
 | 78 | Fine-tune CLIP for multimodal tasks | CV / NLP | CLI |
-| 79 | Autonomous car simulation (CARLA + RL) | RL / CV | Streamlit |
+| 79 | Maze-Solving RL Agent (2D) | RL | Streamlit |
 | 80 | Multimodal chatbot (text + image input) | LLMs / Multimodal | Streamlit |
 | 81 | AI research paper summariser with citations | NLP / RAG | Streamlit |
 | 82 | Video captioning model | CV + NLP | Streamlit |
