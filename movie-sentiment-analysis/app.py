@@ -28,6 +28,7 @@ class ReviewDataset:
         texts, labels = zip(*self.data)
         return list(texts), np.array(labels)
 
+
 class SentimentModel:
     def __init__(self, seed: int = 42):
         self.pipeline = Pipeline(
