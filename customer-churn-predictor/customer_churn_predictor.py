@@ -58,6 +58,7 @@ class Trainer:
         predictions = self.model.predict(X_test)
 
         return Evaluator.evaluate(y_test, predictions)
+    
 
 class Evaluator:
     @staticmethod

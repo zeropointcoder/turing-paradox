@@ -17,7 +17,7 @@ A command-line machine learning application that predicts customer churn using s
   - Accuracy
   - Precision
   - Recall
-  - `F1`-score
+  - F1-score
  
 
 ## Run
