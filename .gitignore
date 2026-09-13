@@ -83,3 +83,4 @@ docs/build/
 *.bak
 *.tmp
 *.old
+.agents
