@@ -29,6 +29,7 @@ class CodeDataset:
                 targets.append(self.char2idx[next_char])
         return torch.tensor(inputs), torch.tensor(targets)
 
+
 # Model
 class CharRNN(nn.Module):
     def __init__(self, vocab_size, hidden_size=128):
@@ -82,6 +83,7 @@ class CodePredictor:
             result += self.dataset.idx2char[next_idx]
             seq.append(next_idx)
         return result
+
 
 # Streamlit UI
 st.title("Smart Code Predictor")
