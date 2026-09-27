@@ -7,7 +7,7 @@ import itertools
 class UKCorpus:
     def __init__(self):
         self.text = """
-        colour organise behaviour centre theatre defence offence licence practise programme travelling cancelled modelling jewellery labour neighbour favourite humour flavour honour metre litre catalogue aluminium analyse apologise aeroplane biscuit cheque cosy grey marvellous plough travelled tyre yoghurt
+        colour colour colour organise organise organise behaviour behaviour centre centre theatre theatre defence offence licence practise programme travelling cancelled modelling jewellery labour neighbour favourite favourite humour flavour honour metre litre catalogue aluminium analyse apologise aeroplane biscuit cheque cosy favourite grey marvellous plough travelled tyre yoghurt
         """
 
     def words(self):
