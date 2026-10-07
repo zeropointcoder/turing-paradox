@@ -77,6 +77,7 @@ class Evaluator:
         roc_auc = roc_auc_score(self.y_test, self.model.predict_proba(self.X_test)[:, 1])
         return report, matrix, roc_auc
 
+
 # Streamlit UI
 st.set_page_config(page_title="Credit Card Fraud Detection", layout="wide")
 st.title("Credit Card Fraud Detection")
